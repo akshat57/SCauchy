@@ -77,3 +77,8 @@ omegamn.dat         mean vorticity of all particles
 varomega.dat        vorticity variance of all particles
    
 Files for restarting the program are stored in checkpoint/
+
+--------sample results--------
+With the parameters given in strack.f90, you can try running the code and visualizing omegamn.dat and varomega.dat. 
+Your results should be similar to the figures in sample_results/
+

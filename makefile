@@ -10,14 +10,14 @@ OBJ =	soapC.o \
 	stdsoap2.o \
         turblib.o
 
-all: strack
+all: scauchy
 
-strack : $(OBJ) strack.o  $(CGLIBS)
-	 $(FC) -o $@ $(OBJ) strack.o $(CGLIBS) $(LDLIBS) 
+scauchy : $(OBJ) scauchy.o  $(CGLIBS)
+	 $(FC) -o $@ $(OBJ) scauchy.o $(CGLIBS) $(LDLIBS) 
 
 
-strack.o : strack.f90 mtprng.o stdtypes.o 
-	$(FC) -c strack.f90
+scauchy.o : scauchy.f90 mtprng.o stdtypes.o 
+	$(FC) -c scauchy.f90
 
 mtprng.o : mtprng.f90 stdtypes.o
 	$(FC) -c mtprng.f90
@@ -66,7 +66,7 @@ prodtestwsdl:
 	soapcpp2 -CLcx -2 -I.:$(SOAP_INCLUDE_DIR) TurbulenceService.h
 
 clean:
-	$(RM) *.o *.exe turbf turbc mhdc mhdf channelc channelf mixingc mixingf compiler_flags
+	$(RM) *.dat *.o *.exe turbf turbc mhdc mhdf channelc channelf mixingc mixingf compiler_flags
 
 spotless: clean
 	$(RM) soapClient.c TurbulenceServiceSoap.nsmap soapH.h TurbulenceServiceSoap12.nsmap soapStub.h soapC.c TurbulenceService.h

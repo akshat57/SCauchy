@@ -1,8 +1,9 @@
 --------Reference--------
 This code implements the algorithm proposed in:
-Eyink, G.L., Gupta, A. & Zaki, T. 2019 Stochastic Lagrangian Dynamics of Vorticity. I. General Theory.
+Eyink, G.L., Gupta, A. & Zaki, T. 2019 Stochastic Lagrangian Dynamics of Vorticity. 
+I. General Theory. [ADD ARXIV LINK] 
 
--------libary requirement------
+-------library requirement------
 This code needs the following libraries / functions:
 1. JHU Turbulence DataBase Cluster C and Fortran Interface Library
 https://github.com/idies/turblib
@@ -18,67 +19,78 @@ stdsoap2.h
 turblib.c
 turblib.h
 
-2. pseudorandom number generator Marsenne Twister
-http://coyotegulch.scottrobertladd.net/products/brahe/index.html
-With the permission by the author, we provide the source codes here:
+2. A Fortran95 implementation of the Mersenne Twister algorithm for generating
+pseudorandom sequences developed by Scott Robert Ladd. This code was formerly 
+available at the official Mersenne Twister website:     
+http://www.math.sci.hiroshima-u.ac.jp/~m-mat/MT/VERSIONS/FORTRAN/fortran.html
+which still provides several other Fortran implementations. With permission of Ladd, 
+we provide his source codes here:
 mtprng.f90
 stdtypes.f90
 
-3. The y locations of the grid points of the channel flow database
+3. The y locations of the grid points of the channel flow database: 
 http://turbulence.pha.jhu.edu/docs/channel/y.txt
-Please rename it as ygrid.txt
 
-The main source code is strack.f90
+The main driver code is scauchy.f90
 
 Make sure that gcc and gfortran are installed (gcc/5.5.0 is recommended).
 
 -------Authorization Token for JHTDB------
-An authorization token for the Johns Hopkins Turbulent Databases is required to run the code.
-We provide a test token in the code. If you need request a larger size of velocity data from the turbulent database, please follow the instructions on JHTDB website to ask for a token:
+An authorization token for the Johns Hopkins Turbulent Databases is required to 
+run the code. We provide a test token in the code, which will run with a small 
+number of particles. If you need more, please follow the instructions on the 
+JHTDB website to request your own token:
 http://turbulence.pha.jhu.edu/authtoken.aspx
 
 --------compile and run--------
-We provide a makefile for compilation 
-
-To compile the code, input:
+We provide a makefile for compilation. To compile the code, input in your 
+terminal window:
 
 make all
 
-in your teminal. 
-
-Then input:
+To run the compiled program, then type in a terminal window the following commands:
 
 mkdir checkpoint
-./strack
+./scauchy
 
-The program will start running.
 
 --------input and output--------
-All the parameters are set in strack.f90
+All the parameters are set in scauchy.f90
 
 Input parameters:
-Nsamp      ! number of particles, must be even
+Nsamp      ! number of particles, which must be an even integer 
 Nstep      ! number of backward integration time steps
-timef      ! forward time of final vorticity
-dt         ! backward integration time step size
-x0         ! location of final vorticity 
-px         ! the size of of the block over which we average, deltax=px*dx
-py         ! the size of of the block over which we average, deltay=py*dy
-pz         ! the size of of the block over which we average, deltaz=pz*dz
+dt         ! backward integration time step size (positive) 
+timef      ! release time of particles
+x0         ! release location (3-vector) of particles  
+px         ! number of x-gridpoints to coarse-grain vorticity, deltax=px*dx
+py         ! number of y-gridpoints to coarse-grain vorticity, deltay=py*dy
+pz         ! number of x-gridpoints to coarse-grain vorticity, deltaz=pz*dz
 
 Note: px = py = pz = 0 means no coarse graining
 
 Output files:
-wallparticles.dat   each row is: wall particle index; hitting time; hitting locations; vorticity
-history.dat         trajectories of first 30 particles
+wallparticles.dat   each row is: wall particle index; hitting time; hitting location; Cauchy vorticity-vector 
+history.dat         full trajectories of first 30 particles
 meanposition.dat    mean position of all particles
 varposition.dat     position variance of all particles
-omegamn.dat         mean vorticity of all particles
-varomega.dat        vorticity variance of all particles
+omegamn.dat         mean of Cauchy vorticity-vector of all particles
+varomega.dat        variance of Cauchy vorticity-vector of all particles
    
-Files for restarting the program are stored in checkpoint/
+If online access to the database is interrupted or if the program 
+stalls, files for restarting the program are stored in checkpoint/
+You can restart the code by inputting again into the terminal window
+the command
+ 
+./scauchy
 
 --------sample results--------
-With the parameters given in strack.f90, you can try running the code and visualizing omegamn.dat and varomega.dat. 
-Your results should be similar to the figures in sample_results/
+With the parameters given in scauchy.f90, you can try running the code and 
+plotting output in omegamn.dat and varomega.dat. We have provided a Matlab
+script 
+
+makefigs.m 
+
+to generate such plots. Your results should be similar to the corresponding 
+figures in sample_results/
 

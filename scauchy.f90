@@ -21,7 +21,7 @@ program scauchy
 !  DISCLAIMER and LICENSE:
 !
 !  This computer program source file is supplied "AS IS". The Authors
-!  disclaims all warranties, expressed or implied, including, without 
+!  disclaim all warranties, expressed or implied, including, without 
 !  limitation, the warranties of merchantability and of fitness for 
 !  any purpose. The Authors assume no liability for direct, indirect, 
 !  incidental, special, exemplary, or consequential damages, which may 
@@ -78,6 +78,12 @@ implicit none
    integer, parameter :: tsleep=300  ! clock time in seconds between attempted calls to the database
 
 
+   ! ---- SPECIFY YOUR ACCESS KEY HERE  ----
+   ! If you need one, please visit http://turbulence.pha.jhu.edu/
+   ! (We just want to know a bit about our users!)
+   character*100 :: authkey = 'edu.jhu.pha.turbulence.testing-201311' // CHAR(0)
+
+
    !! PARAMETERS TO CALL THE JHU TURBULENT CHANNEL-FLOW DATABASE (DO NOT EDIT)
 
    ! ---- Temporal Interpolation Options ----
@@ -110,13 +116,6 @@ implicit none
    !
    character*100 :: dataset = 'channel' // CHAR(0)
    
-   !
-   ! Specify your access key here.
-   ! If you need one, please visit http://turbulence.pha.jhu.edu/
-   ! (We just want to know a bit about our users!)
-   !
-   character*100 :: authkey = 'edu.jhu.pha.turbulence.testing-201311' // CHAR(0)
-
 
    !! DATABASE SIMULATION PARAMETERS (DO NOT EDIT)
 

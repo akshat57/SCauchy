@@ -17,38 +17,6 @@ program scauchy
 ! file "Readme.txt"
 !
 !---------------------------------------------------------------------
-!
-!  DISCLAIMER and LICENSE:
-!
-!  This computer program source file is supplied "AS IS". The Authors
-!  disclaim all warranties, expressed or implied, including, without 
-!  limitation, the warranties of merchantability and of fitness for 
-!  any purpose. The Authors assume no liability for direct, indirect, 
-!  incidental, special, exemplary, or consequential damages, which may 
-!  result from the use of this software, even if advised of the possibility 
-!  of such damage.
-!
-!  The Authors hereby grant anyone permission to use, copy, modify, and
-!  distribute this source code, or portions hereof, for any purpose,
-!  without fee, subject to the following restrictions:
-!
-!      1. The origin of this source code must not be misrepresented.
-!
-!      2. Altered versions must be plainly marked as such and must not
-!         be misrepresented as being the original source.
-!
-!      3. This notice may not be removed or altered from any source or
-!         altered source distribution.
-!
-!  The Authors specifically permit (without fee) and encourage the use
-!  of this source code for entertainment, education, or decoration. If
-!  you use this source code in a product, acknowledgment is not required
-!  but would be appreciated.
-!
-!  If you modify this file, you may insert additional notices
-!  immediately following this sentence.
-!
-!-----------------------------------------------------------------------
 
 use stdtypes
 use mtprng

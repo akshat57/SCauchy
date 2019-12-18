@@ -7,11 +7,11 @@ program scauchy
 ! algorithm to calculate realizations and statistics of stochastic Cauchy 
 ! vorticity vectors for spacetime events selected from an online database 
 ! of a turbulent channel flow. It was written by Gregory L. Eyink, Akshat 
-! Gupta, Mengze Wang, and Tamer Zaki [hereafter, the Authors]. This code
+! Gupta, Mengze Wang, and Tamer A. Zaki [hereafter, the Authors]. This code
 ! implements the algorithm proposed in:
 !
-! Eyink, G.L., Gupta, A. & Zaki, T. 2019 Stochastic Lagrangian Dynamics of 
-! Vorticity. I. General Theory.   https://arxiv.org/abs/????.?????
+! Eyink, G.L., Gupta, A. & Zaki, T.A. 2019 Stochastic Lagrangian Dynamics of 
+! Vorticity. I. General Theory.   http://arxiv.org/abs/1912.06677
 !
 ! For more information on the program and its use, consult the accompanying
 ! file "Readme.txt"

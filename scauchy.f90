@@ -7,8 +7,8 @@ program scauchy
 ! algorithm to calculate realizations and statistics of stochastic Cauchy 
 ! vorticity vectors for spacetime events selected from an online database 
 ! of a turbulent channel flow. It was written by Gregory L. Eyink, Akshat 
-! Gupta, Mengze Wang, and Tamer A. Zaki [hereafter, the Authors]. This code
-! implements the algorithm proposed in:
+! Gupta, Mengze Wang, and Tamer A. Zaki. This code implements the algorithm 
+! proposed in:
 !
 ! Eyink, G.L., Gupta, A. & Zaki, T.A. 2019 Stochastic Lagrangian Dynamics of 
 ! Vorticity. I. General Theory.   http://arxiv.org/abs/1912.06677
@@ -46,7 +46,8 @@ implicit none
    integer, parameter :: tsleep=300  ! clock time in seconds between attempted calls to the database
 
 
-   ! ---- SPECIFY YOUR ACCESS KEY HERE  ----
+   !!   SPECIFY YOUR ACCESS KEY HERE  
+   
    ! If you need one, please visit http://turbulence.pha.jhu.edu/
    ! (We just want to know a bit about our users!)
    character*100 :: authkey = 'edu.jhu.pha.turbulence.testing-201311' // CHAR(0)

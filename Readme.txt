@@ -1,7 +1,7 @@
 --------Reference--------
 This code implements the algorithm proposed in:
 Eyink, G.L., Gupta, A. & Zaki, T. 2019 Stochastic Lagrangian Dynamics of Vorticity. 
-I. General Theory. [ADD ARXIV LINK] 
+I. General Theory. See: http://arxiv.org/abs/1912.06677
 
 -------library requirement------
 This code needs the following libraries / functions:

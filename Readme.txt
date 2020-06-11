@@ -4,7 +4,7 @@ Eyink, G.L., Gupta, A. & Zaki, T. 2019 Stochastic Lagrangian Dynamics of Vortici
 I. General Theory. See: http://arxiv.org/abs/1912.06677
 
 -------library requirement------
-QUICK SETUP : RUN setup.sh to skip the steps below. Make sure you have git on your system.
+QUICK SETUP : RUN setup.sh to skip the library requirement steps. This shell script requires git.
 
 This code needs the following libraries / functions:
 1. JHU Turbulence DataBase Cluster C and Fortran Interface Library

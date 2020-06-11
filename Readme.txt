@@ -4,6 +4,8 @@ Eyink, G.L., Gupta, A. & Zaki, T. 2019 Stochastic Lagrangian Dynamics of Vortici
 I. General Theory. See: http://arxiv.org/abs/1912.06677
 
 -------library requirement------
+QUICK SETUP : RUN setup.sh to skip the steps below. Make sure you have git on your system.
+
 This code needs the following libraries / functions:
 1. JHU Turbulence DataBase Cluster C and Fortran Interface Library
 https://github.com/idies/turblib
@@ -30,6 +32,8 @@ stdtypes.f90
 
 3. The y locations of the grid points of the channel flow database: 
 http://turbulence.pha.jhu.edu/docs/channel/y.txt
+We also provide the y.txt file in our home directory.
+
 
 The main driver code is scauchy.f90
 
